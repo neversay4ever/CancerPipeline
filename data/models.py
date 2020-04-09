@@ -40,8 +40,8 @@ class Panel(models.Model):
     panel_report_type = models.CharField(
         verbose_name='Panel的报告类型', max_length=10, default='ngs')
     panel_library_method = models.CharField(verbose_name='建库方法', max_length=10)
-    target_therapy_genes = models.TextField(verbose_name='靶向基因')
-    chemo_therapy_genes = models.TextField(verbose_name='化疗基因')
+    target_therapy_gene = models.TextField(verbose_name='靶向基因')
+    chemo_therapy_gene = models.TextField(verbose_name='化疗基因')
     genetic_counseling_gene = models.TextField(verbose_name='遗传基因')
     immunity_therapy_gene = models.TextField(verbose_name='免疫基因')
     mutation_short_gene = models.TextField(verbose_name='SNP/Indel基因')
