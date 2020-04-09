@@ -4,7 +4,7 @@ from djangoql.admin import DjangoQLSearchMixin
 from django.core import serializers
 
 # Register your models here.
-from .models import Cancer, Panel, Gene, Mutation, Fusion, RefGeneFlat, OncoKB, OncoKBMutation, Civic, PharmGKB, Hereditary, ClinicalTrials, ImmunityReport
+from .models import Cancer, Panel, Gene, Mutation, Fusion, RefGeneFlat, OncoKB, OncoKBMutation, Civic, PharmGKB, Hereditary, ClinicalTrials, ImmunityReport, Drug
 from django.db.models import Count
 
 
@@ -79,4 +79,9 @@ class ClinicalTrialsAdmin(CustomModelAdmin):
 
 @admin.register(ImmunityReport)
 class ImmunityReportAdmin(CustomModelAdmin):
+    pass
+
+
+@admin.register(Drug)
+class DrugReportAdmin(CustomModelAdmin):
     pass

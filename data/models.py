@@ -451,3 +451,7 @@ class Drug(models.Model):
         verbose_name='是否激素药物', default=False, null=True, blank=True)
     target = models.CharField(
         verbose_name='药物靶点', max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = '药物信息'
+        verbose_name_plural = '药物信息'
