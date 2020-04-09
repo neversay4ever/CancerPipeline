@@ -187,7 +187,7 @@ class OncoKB(models.Model):
         verbose_name='ENST编号', max_length=50, null=True, blank=True)
     refseq = models.CharField(verbose_name='转录本编号',
                               max_length=50, null=True, blank=True)
-    entrez_gene_id = models.PositiveSmallIntegerField(
+    entrez_gene_id = models.IntegerField(
         verbose_name='Entrez基因ID', null=True, blank=True)
     gene_name = models.CharField(
         verbose_name='基因名称', max_length=20, null=True, blank=True)
@@ -216,7 +216,7 @@ class OncoKBMutation(models.Model):
         verbose_name='ENST编号', max_length=50, null=True, blank=True)
     refseq = models.CharField(verbose_name='转录本编号',
                               max_length=50, null=True, blank=True)
-    entrez_gene_id = models.PositiveSmallIntegerField(
+    entrez_gene_id = models.IntegerField(
         verbose_name='Entrez基因ID', null=True, blank=True)
     gene_name = models.CharField(
         verbose_name='基因名称', max_length=20, null=True, blank=True)
@@ -339,8 +339,8 @@ class PharmGKB(models.Model):
         verbose_name='临床类型', max_length=50, null=True, blank=True)
     clinical_guide = models.CharField(
         verbose_name='临床作用', max_length=20, null=True, blank=True)
-    evidence_weight = models.IntegerField(
-        verbose_name='证据等级', default=0, null=True, blank=True)
+    evidence = models.CharField(
+        verbose_name='证据等级', max_length=4, null=True, blank=True)
     therapeutic_weight = models.IntegerField(
         verbose_name='疗效等级', default=0, null=True, blank=True)
     side_effect_weight = models.IntegerField(
