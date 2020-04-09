@@ -432,3 +432,22 @@ class ImmunityReport(models.Model):
     class Meta:
         verbose_name = '报告中免疫信息'
         verbose_name_plural = '报告中免疫信息'
+
+
+class Drug(models.Model):
+    drug_name_en = models.CharField(
+        verbose_name='药物名-英文', max_length=50, null=True, blank=True)
+    drug_name_cn_official = models.CharField(
+        verbose_name='药物名-中文-官方', max_length=50, null=True, blank=True)
+    drug_name_cn_public = models.CharField(
+        verbose_name='药物名-中文-通用', max_length=50, null=True, blank=True)
+    drug_name_alias = models.CharField(
+        verbose_name='药物名-别名', max_length=50, null=True, blank=True)
+    NMPA_approve_tag = models.BooleanField(
+        verbose_name='是否NMPA批准', default=False, null=True, blank=True)
+    FDA_approve_tag = models.BooleanField(
+        verbose_name='是否FDA批准', default=False, null=True, blank=True)
+    hormone_tag = models.BooleanField(
+        verbose_name='是否激素药物', default=False, null=True, blank=True)
+    target = models.CharField(
+        verbose_name='药物靶点', max_length=200, null=True, blank=True)
