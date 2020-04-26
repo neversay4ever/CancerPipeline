@@ -455,3 +455,61 @@ class Drug(models.Model):
     class Meta:
         verbose_name = '药物信息'
         verbose_name_plural = '药物信息'
+
+
+class TargetDrug(models.Model):
+    drug_generic_name_en = models.CharField(
+        verbose_name='英文通用名', max_length=50, null=True, blank=True)
+    drug_generic_name_cn = models.CharField(
+        '中文通用名', max_length=50, null=True, blank=True)
+    common_translation = models.CharField(
+        '常用译名', max_length=50, null=True, blank=True)
+    brand_name_en = models.CharField(
+        '英文商品名', max_length=50, null=True, blank=True)
+    brand_name_cn = models.CharField(
+        '中文商品名', max_length=50, null=True, blank=True)
+    NMPA_approved_tag = models.BooleanField('是否NMPA批准', default=True)
+    NMPA_approved_biomarker = models.CharField(
+        'NMPA批准的标志物，对应诊断分类', max_length=50, null=True, blank=True)
+    NMPA_approved_usage = models.CharField(
+        'NMPA批准的用途', max_length=50, null=True, blank=True)
+    NMPA_approved_category = models.CharField(
+        'NMPA批准的诊断分类', max_length=50, null=True, blank=True)
+    NMPA_offlabel_usage = models.CharField(
+        'NMPA超说明书适应症', max_length=50, null=True, blank=True)
+    NMPA_offlabel_category = models.CharField(
+        'NMPA超说明书诊断分类', max_length=50, null=True, blank=True)
+    NMPA_indication = models.CharField(
+        'NMPA适应症', max_length=50, null=True, blank=True)
+    FDA_approved_tag = models.BooleanField('是否FDA批准', default=True)
+    FDA_approved_biomarker = models.CharField(
+        'FDA批准的标志物，对应诊断分类', max_length=50, null=True, blank=True)
+    FDA_approved_usage_en = models.CharField(
+        'FDA批准的用途-英文', max_length=50, null=True, blank=True)
+    FDA_approved_usage_cn = models.CharField(
+        'FDA批准的用途-中文', max_length=50, null=True, blank=True)
+    FDA_approved_category = models.CharField(
+        'FDA批准的诊断分类', max_length=50, null=True, blank=True)
+    FDA_offlabel_usage_en = models.CharField(
+        'FDA超说明书适应症-英文', max_length=50, null=True, blank=True)
+    FDA_offlabel_usage_cn = models.CharField(
+        'FDA超说明书适应症-中文', max_length=50, null=True, blank=True)
+    FDA_offlabel_category = models.CharField(
+        'FDA超说明书诊断分类', max_length=50, null=True, blank=True)
+    FDA_indication_en = models.CharField(
+        'FDA适应症-英文', max_length=50, null=True, blank=True)
+    FDA_indication_cn = models.CharField(
+        'FDA适应症-中文', max_length=50, null=True, blank=True)
+    synonyms = models.CharField('别名', max_length=50, null=True, blank=True)
+    pharmacologic_category_en = models.CharField(
+        '药理学类别-英文', max_length=50, null=True, blank=True)
+    pharmacologic_category_cn = models.CharField(
+        '药理学类别-中文', max_length=50, null=True, blank=True)
+    dosage_forms_en = models.CharField(
+        '剂型-英文', max_length=50, null=True, blank=True)
+    dosage_forms_cn = models.CharField(
+        '剂型-中文', max_length=50, null=True, blank=True)
+
+    class Meta:
+        verbose_name = '靶向药物信息'
+        verbose_name_plural = '靶向药物信息'
