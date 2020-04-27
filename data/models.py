@@ -468,6 +468,8 @@ class TargetDrug(models.Model):
         '英文商品名', max_length=50, null=True, blank=True)
     brand_name_cn = models.CharField(
         '中文商品名', max_length=50, null=True, blank=True)
+    target_drug_tag = models.BooleanField('是否靶向药物', default=True)
+    immune_drug_tag = models.BooleanField('是否免疫药物', default=False)
     NMPA_approved_tag = models.BooleanField('是否NMPA批准', default=True)
     NMPA_approved_biomarker = models.CharField(
         'NMPA批准的标志物，对应诊断分类', max_length=50, null=True, blank=True)
